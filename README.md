@@ -20,7 +20,7 @@ node ProjectX
 ## Contributing
 ProjectX is built by people just like you! Most of the interesting things are built with ProjectX.
 
-If you're interested in contributing to Probot itself, check out our contributing docs to get started.
+If you're interested in contributing to ProjectX itself, check out our contributing docs to get started.
 
 Want to chat with ProjectX users and contributors? Join our Discord!
 
