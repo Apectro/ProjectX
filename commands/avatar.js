@@ -7,7 +7,6 @@ module.exports.run = async (bot, message, args) => {
     let mentionedUser = message.mentions.users.first() || message.author;
 
         let embed = new Discord.RichEmbed()
-
         .setImage(mentionedUser.displayAvatarURL)
         .setColor(colors.COLOR2)
         .setTitle("Avatar")

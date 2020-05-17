@@ -40,20 +40,25 @@ x.on('ready', () => {
 
 x.on('guildMemberAdd', member => {
     const Welcome = new Discord.RichEmbed()
-    .setAuthor(`ProjectX v${config.VERSION}`)
+    .setAuthor(`ProjectX v${config.VERSION} - Prefix ${config.PREFIX}`, x.user.displayAvatarURL)
     .setColor(colors.COLOR2)
     .setDescription(`
-        We are happy to announce pre-release of ProjectX.
-        As our developers are working hardly to deploy it to public purposes.
+        We're happy to announce beta release of ProjectX.
+        For more information about this project visit us on [Github](https://github.com/sonqs/ProjectX).
 
-        Be free to contact our developers by sending them a message - swirls#0001
+        ProjectX is is an open-source Bot coded by [Swirls](https://github.com/sonqs).
+        If you're interested in contributing to ProjectX itself, check out our contributing docs to get started.
+
+        ProjectX is licensed under the MIT license. See the file LICENSE for more information. If you plan to use any part of this source code in your own bot, I would be grateful if you would include some form of credit somewhere.
+
+        Developer Contact: swirls#0001
     `)
     .setTimestamp()
-    .setFooter("ProjectX")
+    .setFooter(`ProjectX v${config.VERSION}`)
     member.send(Welcome)
 });
 
-x.on('guildMemberAdd', member => {
+x.on('guildMemberAdd', (member, message) => {
     var messages = [
         `Brace yourselves. <@${member.user.id}> just joined the server.`,
         `Challenger approaching - <@${member.user.id}> has appeared`,
@@ -69,11 +74,23 @@ x.on('guildMemberAdd', member => {
     ]
     const WelcomeMessage = new Discord.RichEmbed()
     .setColor(colors.COLOR2)
+    .setAuthor("Welcome Message")
     .setDescription(messages[ Math.floor( Math.random() * 11 ) ])
     .setTimestamp(new Date())
     member.guild.channels.get(config.CHANNELID).send(WelcomeMessage);
 });
 
-
+x.on("ready", () => {
+  var textChannel = x.channels.find(channel => channel.id === "707745222184009772")
+  setInterval(() => {
+      const IntervalMessage = new Discord.RichEmbed()
+      .setColor(colors.COLOR2)
+      .setAuthor(`ProjectX v${config.VERSION} - Patch Notes`, x.user.displayAvatarURL)
+      .setDescription(`${config.PATCHNOTES}`)
+      .setFooter("Patch Notes")
+      .setTimestamp()
+      textChannel.send(IntervalMessage)
+  }, 50000 * 60);
+})
 
 x.login(config.TOKEN);

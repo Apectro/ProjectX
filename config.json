@@ -1,12 +1,15 @@
 {
-    "TOKEN": "YOUR TOKEN",
+    "TOKEN": "TOKEN",
     "PREFIX": "x",
     "STATUS": "idle",
     "CHANNELID": "707745222184009772",
     "ROLEID": "709488216671256728",
-    "VERSION": "1.0.11",
+    "VERSION": "1.6.13",
 
 
     "VERIFY": "Nebula 18+",
-    "VERIFYTEXT": "18+ Soba"
+    "VERIFYTEXT": "18+ Soba",
+
+
+    "PATCHNOTES": "Added Interval Messages \nFixed Event Issue"
 }

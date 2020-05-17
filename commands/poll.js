@@ -14,9 +14,7 @@ exports.run = async (client, message, args, tools) => {
     const poll = new Discord.RichEmbed()
     .setColor(colors.COLOR2)
     .setTitle(`Command: ${config.PREFIX}poll`)
-    .setDescription(`**Description:** Create a poll
-    **Cooldown:** No cooldown
-    **Usage:** ${config.PREFIX}poll trump vs putin`)
+    .setDescription(`**Description:** Create a poll \n**Cooldown:** No cooldown \n**Usage:** ${config.PREFIX}poll trump vs putin`)
     if (!args.join(' ')) return message.channel.send(poll).then(msg => msg.delete(3000));
 
     const embed = new Discord.RichEmbed()

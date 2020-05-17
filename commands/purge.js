@@ -2,14 +2,12 @@ const Discord = require("discord.js");
 const config = require("../config.json")
 const colors = require("../colors.json")
 
-module.exports.run = async (bot, message, args) => {
+module.exports.run = async (message, args) => {
   if(args[0] == "help"){
     let purge0 = new Discord.RichEmbed()
     .setColor(colors.COLOR2)
     .setTitle(`Command: ${config.PREFIX}purge`)
-    .setDescription(`**Description:** Purge messages
-    **Cooldown:** No cooldown
-    **Usage:** ${config.PREFIX}purge 100`)
+    .setDescription(`**Description:** Purge messages \n**Cooldown:** No cooldown \n**Usage:** ${config.PREFIX}purge 100`)
 
     message.channel.send(purge0).then(msg => msg.delete(3000));
     return;
@@ -26,8 +24,7 @@ module.exports.run = async (bot, message, args) => {
   const purge2 = new Discord.RichEmbed()
   .setColor(colors.COLOR2)
   .setTitle(`Command: ${config.PREFIX}purge`)
-  .setDescription(`Please enter a number of messages to clear!
-  Usage: ${config.PREFIX}purge <amount>`)
+  .setDescription(`Please enter a number of messages to clear! \nUsage: ${config.PREFIX}purge <amount>`)
   .setTimestamp()
   if(!args[0]) return message.channel.send(purge2).then(msg => msg.delete(3000));
   message.channel.bulkDelete(args[0]).then(() => {
